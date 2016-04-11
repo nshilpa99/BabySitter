@@ -8,12 +8,20 @@ public class BabySitterTest
 	@Test
 	public void getBabySitterMinimumStartTimeAndMaximumEndTime(){
 		BabySitter babySitter = new BabySitter();
-		int startTime = babySitter.getStartTime();
-		int endTime = babySitter.getEndTime();
+		int startTime = babySitter.getAllowableStartTime();
+		int endTime = babySitter.getAllowableEndTime();
 		assertEquals(17, startTime);
 		assertEquals(4, endTime);
 
 	}
-	
-	
+
+	@Test
+	public void acceptsBabySittersNewStartTimeAndEndTime(){
+		BabySitter babySitter = new BabySitter(18, 20, 4);
+		assertEquals(18, babySitter.getStartTime());
+		assertEquals(20, babySitter.getBedTime());
+		assertEquals(4, babySitter.getEndTime());
+
+	}
+
 }
