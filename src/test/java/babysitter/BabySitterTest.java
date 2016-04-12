@@ -34,4 +34,24 @@ public class BabySitterTest
 		BabySitter babySitter = new BabySitter(19, 20, 5);
 
 	}
+	@Test
+	public void get24HrFormatForStartTimeToCalculateCharge(){
+		BabySitter babySitter = new BabySitter(18, 20, 4);
+		assertEquals(18, babySitter. get24HrFormatStartTime());
+
+	}
+	@Test
+	public void get24HrFormatForBedTimeToCalculateCharge(){
+		BabySitter babySitter = new BabySitter(18, 20, 4);
+		assertEquals(20, babySitter. get24HrFormatBedTime());
+
+	}
+	@Test
+	public void get24HrFormatForEndTimeToCalculateCharge(){
+		BabySitter babySitter = new BabySitter(18, 20, 4);
+		assertEquals(28, babySitter. get24HrFormatEndTime());
+
+	}
+
+
 }
