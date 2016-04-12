@@ -60,6 +60,12 @@ public class BabySitterTest
 		assertEquals(24, babySitter. getNightlyCharge());
 
 	}
+	@Test
+	public void ifStartTimeIsFivePMAndEndTimeIs8PMChargeCalculatorUsesHourlyRateAs12(){
+		BabySitter babySitter = new BabySitter(17, 20, 20);
+		assertEquals(24, babySitter. getNightlyCharge());
+
+	}
 
 
 }
