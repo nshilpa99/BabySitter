@@ -29,6 +29,8 @@ public class BabySitterChargeCalculator
 				hourlyPay = START_BED_RATE;
 			} else if (betweenBedtimeAndMidnight(i)) {
 				hourlyPay = BED_MIDNIGHT_RATE;
+			}else {
+				hourlyPay = AFTER_MIDNIGHT_RATE;
 			}
 
 			totalPay += hourPay;
@@ -36,7 +38,9 @@ public class BabySitterChargeCalculator
 		
 		return totalPay;
 	}
-	
+	private boolean betweenMidnightAndEndtime(int hour) {
+		return hour >= 24 && hour < 29;
+	}
       	private boolean betweenBedtimeAndMidnight(int hour) {
 		return hour >= bed && hour < 24;
 	}

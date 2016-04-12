@@ -69,9 +69,14 @@ public class BabySitterTest
 	@Test
 	public void ifStartTimeIsFivePMAndEndTimeIs10PMAfterBedTimeChargeCalculatorUsesHourlyRateAs12And8For5hrs(){
 		BabySitter babySitter = new BabySitter(17, 20, 22);
-		assertEquals(36, babySitter. getNightlyCharge());
+		assertEquals(52, babySitter. getNightlyCharge());
 
 	}
 
+	@Test
+	public void ifStartTimeIsFivePMAndEndTimeIsMidnightChargeCalculatorUsesHourlyRateAs12And8For7hrs(){
+		BabySitter babySitter = new BabySitter(17, 20, 24);
+		assertEquals(68, babySitter. getNightlyCharge());
 
+	}
 }
