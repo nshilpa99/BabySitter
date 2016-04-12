@@ -16,11 +16,17 @@ public class BabySitterTest
 	}
 
 	@Test
-	public void acceptsBabySittersNewStartTimeAndEndTime(){
+	public void acceptsBabySittersNewStartTimeAndEndTimeIfWithinAllowableTimeRange(){
 		BabySitter babySitter = new BabySitter(18, 20, 4);
 		assertEquals(18, babySitter.getStartTime());
 		assertEquals(20, babySitter.getBedTime());
 		assertEquals(4, babySitter.getEndTime());
+
+	}
+
+	@Test(expected = NotAllowableTimeRangeException.class)	
+	public void startTimeNotWithinAllowableTimeRangeThrowsException(){
+		BabySitter babySitter = new BabySitter(14, 20, 1);
 
 	}
 
