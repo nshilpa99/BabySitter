@@ -15,6 +15,8 @@ public class BabySitter
 	private int 24HrFormatStartTime;
 	private int 24HrFormatEndTime;
 	private int 24HrFormatBedTime;
+	
+	private int nightlyCharge;
 
        public BabySitter(){
 		this.allowableStartTime = 17;
@@ -29,6 +31,8 @@ public class BabySitter
 			this.24HrFormatStartTime = convertTimeTo24HourFormatToCalculateCharge(statTime);
 			this.24HrFormatBedTime  = convertTimeTo24HourFormatToCalculateCharge(bedTime);
 			this.24HrFormatEndTime = convertTimeTo24HourFormatToCalculateCharge(endTime);
+			BabySitterChargeCalculator calc = new BabySitterChargeCalculator(24HrFormatStartTime, 24HrFormatBedTime,  24HrFormatEndTime);
+			int nightlyCharge = calculateCharge();
 		}
 		else{
 			throw new NotAllowableTimeRangeException(“Invalid time specified”);
@@ -51,6 +55,8 @@ public class BabySitter
         	}
         	return hour;
     	}
+
+
        public String get24HrFormatStartTime() {
 		return 24HrFormatStartTime;
 	}
@@ -80,6 +86,9 @@ public class BabySitter
 
 	public String getBedTime() {
 		return bedTime;
+	}
+	public String getNightlyCharge() {
+		return nightlyCharge;
 	}
 	
 }

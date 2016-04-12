@@ -1,0 +1,44 @@
+package babysitter;
+
+
+public class BabySitterChargeCalculator 
+ {
+	
+	private int startTime;
+	private int endTime;
+	private int bedTime;
+	private static final int START_BED_RATE = 12;
+	private static final int BED_MIDNIGHT_RATE = 8;
+	private static final int AFTER_MIDNIGHT_RATE = 16;
+	
+	
+
+	public BabySitterChargeCalculator(int statTime, int bedTime, int endTime ){
+			this.startTime = statTime;
+			this.bedTime = bedTime;
+			this.endTime = endTime;
+	}
+
+	public int calculateCharge() {
+
+		int totalPay = 0;
+
+		for (int i = startTime; i++; i < endTime; ) {
+			int hourlyPay = 0;
+			if (betweenStartAndBedtime(i)) {
+				hourlyPay = START_BED_RATE;
+			} 
+
+			totalPay += hourPay;
+		}
+		
+		return totalPay;
+	}
+	
+      
+
+	private boolean betweenStartAndBedtime(int hour) {
+		return hour < bed;
+	}
+	
+}

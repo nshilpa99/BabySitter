@@ -5,6 +5,8 @@ import org.unit.test;
 
 public class BabySitterTest
  {
+       
+       
 	@Test
 	public void getBabySitterMinimumStartTimeAndMaximumEndTime(){
 		BabySitter babySitter = new BabySitter();
@@ -50,6 +52,12 @@ public class BabySitterTest
 	public void get24HrFormatForEndTimeToCalculateCharge(){
 		BabySitter babySitter = new BabySitter(18, 20, 4);
 		assertEquals(28, babySitter. get24HrFormatEndTime());
+
+	}
+	@Test
+	public void ifStartTimeIsSixPMAndEndTimeIs8PMChargeCalculatorUsesHourlyRateAs12(){
+		BabySitter babySitter = new BabySitter(18, 20, 20);
+		assertEquals(24, babySitter. get24HrFormatEndTime());
 
 	}
 
