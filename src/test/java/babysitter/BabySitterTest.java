@@ -29,5 +29,9 @@ public class BabySitterTest
 		BabySitter babySitter = new BabySitter(14, 20, 1);
 
 	}
+	@Test(expected = NotAllowableTimeRangeException.class)	
+	public void endTimeNotWithinAllowableTimeRangeThrowsException(){
+		BabySitter babySitter = new BabySitter(19, 20, 5);
 
+	}
 }
